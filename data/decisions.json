@@ -1,0 +1,14 @@
+[
+  {
+    "id": "growth-20260101-120000000",
+    "domain": "personal-growth",
+    "title": "Example: Which professional certification to pursue next",
+    "status": "open",
+    "context": "Example decision record. Delete this.",
+    "options": ["Cloud architecture cert", "ML engineering cert", "Leadership program"],
+    "recommendation": null,
+    "decided_date": null,
+    "outcome": null,
+    "created_at": "2026-01-01"
+  }
+]

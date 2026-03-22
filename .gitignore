@@ -1,0 +1,19 @@
+# Sensitive domain files — customize based on your domains
+# Uncomment or add paths for domains containing personal/sensitive content:
+# domains/04-stakeholders.md
+# domains/08-family.md
+# domains/10-finance.md
+
+# Environment files
+scripts/.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo

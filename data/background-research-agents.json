@@ -1,0 +1,31 @@
+[
+  {
+    "id": "research-agent-intel",
+    "name": "Industry Intelligence Scanner",
+    "description": "Scans for industry news and insights relevant to your domains.",
+    "cadence_days": 3,
+    "last_run": null,
+    "next_run": null,
+    "status": "active",
+    "output_file": "data/intelligence.json",
+    "search_scope": [
+      "See your domain files for focus areas"
+    ],
+    "instructions": "Search for relevant news and insights. Compare against existing intelligence to avoid duplicates. Classify by domain. Flag anything connected to active tasks."
+  },
+  {
+    "id": "research-agent-conferences",
+    "name": "Conference & Speaking Scanner",
+    "description": "Searches for conference CFPs and speaking opportunities.",
+    "cadence_days": 7,
+    "last_run": null,
+    "next_run": null,
+    "status": "planned",
+    "output_file": "data/tasks.json",
+    "search_scope": [
+      "Conferences and events in your industry",
+      "Open CFPs matching your expertise"
+    ],
+    "instructions": "Search for conference CFPs and speaking opportunities. Only surface new opportunities with open CFPs. Include: event name, date, location, CFP deadline, topic fit."
+  }
+]

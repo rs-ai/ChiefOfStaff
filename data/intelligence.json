@@ -1,0 +1,15 @@
+[
+  {
+    "id": "industry-20260101-120000000",
+    "domain": "industry",
+    "category": "research",
+    "type": "market-signal",
+    "title": "Example: Industry trend in AI governance",
+    "summary": "Example intelligence record. Delete this and add real intel.",
+    "source": "Example Source",
+    "url": "https://example.com",
+    "captured_date": "2026-01-01",
+    "relevance": "high",
+    "tags": ["ai", "governance"]
+  }
+]

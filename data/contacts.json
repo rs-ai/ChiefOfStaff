@@ -1,0 +1,16 @@
+[
+  {
+    "id": "network-20260101-120000000",
+    "domain": "network",
+    "name": "Example: J. Smith",
+    "role": "VP Engineering",
+    "company": "Example Corp",
+    "tier": 2,
+    "linkedin": "https://linkedin.com/in/example",
+    "relationship": "Industry peer",
+    "last_interaction": "2026-01-01",
+    "tags": ["engineering", "leadership"],
+    "notes": "NOTE: Delete this example and add your real contacts.",
+    "status": "active"
+  }
+]

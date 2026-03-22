@@ -1,0 +1,13 @@
+[
+  {
+    "id": "leadership-20260101-120000000",
+    "domain": "leadership",
+    "title": "Example: Weekly team sync",
+    "date": "2026-01-06",
+    "attendees": ["Team"],
+    "prep_notes": "Example meeting record. Delete this and add real meetings.",
+    "outcomes": null,
+    "action_items": [],
+    "status": "upcoming"
+  }
+]
