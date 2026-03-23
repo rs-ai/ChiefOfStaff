@@ -172,7 +172,7 @@ This system is built on a few beliefs:
 
 ## Inspired By
 
-- [gstack](https://github.com/garytan/gstack) by Gary Tan — the model for packaging AI workflows as a shareable repo
+- [gstack](https://github.com/garrytan/gstack) by Gary Tan — the model for packaging AI workflows as a shareable repo
 - The real-world operating rhythm of executive Chiefs of Staff
 - Personal knowledge management systems (Zettelkasten, PARA, GTD)
 
