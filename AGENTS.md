@@ -1,5 +1,7 @@
 # AGENTS.md — OpenAI Codex CLI Adapter
 
+> **Note:** This file and `GEMINI.md` serve the same purpose — bridging non-Claude tools to the main `CLAUDE.md` instruction set. They are kept as separate files because Codex reads `AGENTS.md` and Gemini reads `GEMINI.md` by default.
+
 This project is designed for Claude Code using `CLAUDE.md` as the instruction file.
 
 If you are using OpenAI Codex CLI, the system instructions live in `CLAUDE.md`. Codex CLI reads `AGENTS.md` by default, so this file serves as the bridge.

@@ -1,6 +1,10 @@
 # AI Chief of Staff
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 **An AI-powered executive operating system that runs your life across every domain that matters.**
+
+> **Privacy Warning:** This system stores personal data (contacts, decisions, career plans, family context). **Keep your fork PRIVATE.** If you fork this to a public repo after filling in your details, your personal data will be visible to the world. See the [Privacy section](#privacy) below.
 
 Point your AI coding tool at this repo. It becomes your Chief of Staff — proactive, opinionated, and relentless about follow-through.
 
@@ -32,10 +36,10 @@ This is not a plugin or extension. It's a structured repo with instructions that
 
 | Tool | How to Use |
 |------|-----------|
-| **Claude Code** | `cd ai-chief-of-staff && claude` — reads CLAUDE.md automatically |
-| **Codex (OpenAI)** | `cd ai-chief-of-staff && codex` — reads AGENTS.md automatically |
-| **Gemini CLI** | `cd ai-chief-of-staff && gemini` — reads GEMINI.md automatically |
-| **Aider** | `cd ai-chief-of-staff && aider` — reads conventions from repo |
+| **Claude Code** | `cd ChiefOfStaff && claude` — reads CLAUDE.md automatically |
+| **Codex (OpenAI)** | `cd ChiefOfStaff && codex` — reads AGENTS.md automatically |
+| **Gemini CLI** | `cd ChiefOfStaff && gemini` — reads GEMINI.md automatically |
+| **Aider** | `cd ChiefOfStaff && aider` — reads conventions from repo |
 | **Cursor / Windsurf** | Open folder — reads project instructions from repo |
 | **Any MCP-capable tool** | Point it at the repo root |
 
@@ -45,25 +49,28 @@ The `CLAUDE.md` file is the primary instruction set. For non-Claude tools, adapt
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/ai-chief-of-staff.git
-cd ai-chief-of-staff
+git clone https://github.com/YOUR_USERNAME/ChiefOfStaff.git
+cd ChiefOfStaff
 
-# 2. Edit CLAUDE.md — fill in the {{placeholders}} with your details
+# 2. Install dependencies (optional — only needed for email notifications and graph queries)
+pip install -r requirements.txt
+
+# 3. Edit CLAUDE.md — fill in the {{placeholders}} with your details
 #    This takes 10-15 minutes. It's the only setup you need.
 
-# 3. Open your AI tool
+# 4. Open your AI tool
 claude                    # Claude Code
 # or: codex              # OpenAI Codex
 # or: gemini             # Google Gemini CLI
 
-# 4. Your Chief of Staff is live.
+# 5. Your Chief of Staff is live.
 #    Try: "Good morning, what should I focus on today?"
 ```
 
 ## What's Inside
 
 ```
-ai-chief-of-staff/
+ChiefOfStaff/
 ├── CLAUDE.md                          # The operating system (edit this)
 ├── AGENTS.md                          # Codex/OpenAI adapter
 ├── GEMINI.md                          # Gemini CLI adapter
@@ -160,6 +167,19 @@ Edit `data/background-research-agents.json` to add new persistent research topic
 ### Configure Email Notifications
 Copy `scripts/.env.example` to `scripts/.env`, add your email API key, and the Chief of Staff will email you intelligence updates, contact reminders, and domain alerts.
 
+## Privacy
+
+This system is designed to store personal and sensitive data. After you customize it:
+
+- **Keep your repo PRIVATE** — `CLAUDE.md` will contain your name, role, family context, and career plans
+- **`data/*.json` files will contain real contacts, decisions, and intelligence** — these should never be in a public repo
+- **`domains/*.md` files will contain personal goals and strategies**
+- **The `.gitignore` includes sensible defaults** but review it after setup
+
+The template ships with a `.gitignore` that excludes sensitive data files after customization. Run the setup steps and verify `git status` shows only what you intend to commit.
+
+If you want to share your customized system publicly (e.g., to show the architecture), create a separate sanitized copy with all personal data replaced by placeholders.
+
 ## Philosophy
 
 This system is built on a few beliefs:
@@ -172,7 +192,7 @@ This system is built on a few beliefs:
 
 ## Inspired By
 
-- [gstack](https://github.com/garytan/gstack) by Gary Tan — the model for packaging AI workflows as a shareable repo
+- [gstack](https://github.com/garrytan/gstack) by Garry Tan — the model for packaging AI workflows as a shareable repo
 - The real-world operating rhythm of executive Chiefs of Staff
 - Personal knowledge management systems (Zettelkasten, PARA, GTD)
 

@@ -228,20 +228,32 @@ def cmd_all(config):
 
 
 if __name__ == "__main__":
-    config = load_env()
     commands = {
         "--test": cmd_test,
         "--intel": cmd_intel,
         "--contacts": cmd_contacts,
         "--briefing": cmd_briefing,
         "--all": cmd_all,
+        "--help": None,
     }
 
-    if len(sys.argv) < 2 or sys.argv[1] not in commands:
+    if len(sys.argv) < 2 or sys.argv[1] not in commands or sys.argv[1] == "--help":
+        print("Chief of Staff — Email Notification System")
+        print()
         print("Usage: python scripts/notify.py [command]")
+        print()
         print("Commands:")
         for cmd, fn in commands.items():
-            print(f"  {cmd:15s} {fn.__doc__}")
-        sys.exit(1)
+            if fn:
+                print(f"  {cmd:15s} {fn.__doc__}")
+        print(f"  {'--help':15s} Show this help message")
+        print()
+        print("Setup:")
+        print("  1. pip install -r requirements.txt")
+        print("  2. Copy scripts/.env.example to scripts/.env")
+        print("  3. Add your RESEND_API_KEY and NOTIFY_TO email")
+        print("  4. Run: python scripts/notify.py --test")
+        sys.exit(0 if sys.argv[1:] == ["--help"] else 1)
 
+    config = load_env()
     commands[sys.argv[1]](config)

@@ -27,7 +27,7 @@ If `{{YOUR_NAME}}` still appears in this file, complete setup before running any
 2. Customize domain names and rename domain files to match
 3. Delete example records from `data/*.json` files
 4. Copy `scripts/.env.example` to `scripts/.env` and fill in your API keys
-5. Run `/briefing` to verify everything works
+5. Run `/briefing` to verify everything works (in Claude Code, type `/briefing`. For other tools, see `AGENTS.md` or `GEMINI.md` for how to run slash commands.)
 
 ## Communication Style
 

@@ -1,5 +1,7 @@
 # GEMINI.md — Google Gemini CLI Adapter
 
+> **Note:** This file and `AGENTS.md` serve the same purpose — bridging non-Claude tools to the main `CLAUDE.md` instruction set. They are kept as separate files because Gemini reads `GEMINI.md` and Codex reads `AGENTS.md` by default.
+
 This project is designed for Claude Code using `CLAUDE.md` as the instruction file.
 
 If you are using Google Gemini CLI, the system instructions live in `CLAUDE.md`. Gemini CLI reads `GEMINI.md` by default, so this file serves as the bridge.

@@ -1,10 +1,35 @@
-# Sensitive domain files — customize based on your domains
-# Uncomment or add paths for domains containing personal/sensitive content:
+# ============================================
+# Chief of Staff — .gitignore
+# ============================================
+# This template ships with example data that IS committed so new users
+# can see the structure. After you customize with your real data,
+# uncomment the relevant lines below to protect your personal information.
+
+# ------ YOUR PERSONAL DATA (uncomment after setup) ------
+# After deleting example records and adding your real data,
+# uncomment these to keep personal data out of git:
+
+# data/contacts.json
+# data/decisions.json
+# data/meetings.json
+# data/intelligence.json
+# data/tasks.json
+# data/connections.json
+# data/standup-latest.md
+# data/briefing-latest.md
+
+# Intelligence research files (created by background agents)
+data/intelligence/
+
+# ------ SENSITIVE DOMAIN FILES ------
+# Uncomment domains that contain personal/sensitive content:
 # domains/04-stakeholders.md
 # domains/08-family.md
 # domains/10-finance.md
 
-# Environment files
+# ------ ALWAYS IGNORED ------
+
+# Environment files (API keys)
 scripts/.env
 *.env
 
@@ -12,8 +37,18 @@ scripts/.env
 .DS_Store
 Thumbs.db
 
-# Editor files
+# Editor / IDE files
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node
+node_modules/

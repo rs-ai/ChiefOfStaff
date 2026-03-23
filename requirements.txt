@@ -1,0 +1,5 @@
+# Chief of Staff — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+duckdb>=0.9.0      # Knowledge graph queries (scripts/graph-query.py)
+resend>=0.7.0      # Email notifications (scripts/notify.py)
