@@ -19,6 +19,8 @@ Optional: Verify a custom domain in Resend for a branded sender
 
 import json
 import sys
+import html
+import re
 import resend
 from datetime import datetime, timezone
 from pathlib import Path
@@ -80,17 +82,31 @@ def send_email(config, subject, html_body):
     return email
 
 
+def safe_url(url):
+    """Validate and return URL, or '#' if invalid."""
+    if not url:
+        return "#"
+    url = url.strip()
+    if re.match(r'^https?://', url, re.IGNORECASE):
+        return html.escape(url, quote=True)
+    return "#"
+
+
 def format_intel_email(intel_items):
     """Format intelligence items into an HTML email."""
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     items_html = ""
     for item in intel_items:
-        source_link = f'<a href="{item.get("url", "#")}" style="color:#3b82f6;">Source</a>' if item.get("url") else ""
+        url = safe_url(item.get("url", ""))
+        source_link = f'<a href="{url}" style="color:#3b82f6;">Source</a>' if item.get("url") and url != "#" else ""
+        title = html.escape(item.get('title', 'Unknown'))
+        domain = html.escape(item.get('domain', ''))
+        summary = html.escape(item.get('summary', ''))
         items_html += f"""
         <div style="padding:12px;border-bottom:1px solid #e2e8f0;">
-            <strong>{item.get('title', 'Unknown')}</strong>
-            <span style="background:#e2e8f0;padding:2px 6px;border-radius:3px;font-size:12px;margin-left:8px;">{item.get('domain', '')}</span>
-            <p style="margin:6px 0;color:#334155;">{item.get('summary', '')}</p>
+            <strong>{title}</strong>
+            <span style="background:#e2e8f0;padding:2px 6px;border-radius:3px;font-size:12px;margin-left:8px;">{domain}</span>
+            <p style="margin:6px 0;color:#334155;">{summary}</p>
             {source_link}
         </div>"""
 
@@ -119,7 +135,7 @@ def format_briefing_email(briefing_text):
             <p style="margin:4px 0 0;color:#94a3b8;">{today}</p>
         </div>
         <div style="border:1px solid #e2e8f0;border-top:none;border-radius:0 0 8px 8px;padding:16px;">
-            <pre style="white-space:pre-wrap;font-family:system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.6;">{briefing_text}</pre>
+            <pre style="white-space:pre-wrap;font-family:system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.6;">{html.escape(briefing_text)}</pre>
         </div>
     </body>
     </html>"""
@@ -130,17 +146,30 @@ def format_contacts_email(contacts):
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     rows = ""
     for c in contacts:
-        linkedin_url = c.get("linkedin", "")
-        linkedin_link = f'<a href="https://{linkedin_url}" style="color:#3b82f6;">LinkedIn</a>' if linkedin_url else "—"
+        linkedin_raw = c.get("linkedin", "").strip()
+        if linkedin_raw:
+            # Normalize: strip existing scheme, validate domain, prepend https
+            linkedin_raw = re.sub(r'^https?://', '', linkedin_raw)
+            if linkedin_raw.startswith("linkedin.com") or linkedin_raw.startswith("www.linkedin.com"):
+                linkedin_link = f'<a href="https://{html.escape(linkedin_raw, quote=True)}" style="color:#3b82f6;">LinkedIn</a>'
+            else:
+                linkedin_link = "—"
+        else:
+            linkedin_link = "—"
         tier_color = "#ef4444" if c.get("tier") == 1 else "#eab308" if c.get("tier") == 2 else "#94a3b8"
-        notes_snippet = (c.get("notes", "")[:120] + "...") if len(c.get("notes", "")) > 120 else c.get("notes", "")
+        raw_notes = c.get("notes", "")
+        notes_snippet = html.escape((raw_notes[:120] + "...") if len(raw_notes) > 120 else raw_notes)
+        name = html.escape(c.get('name', '?'))
+        role = html.escape(c.get('role', ''))
+        company = html.escape(c.get('company', ''))
+        tier = html.escape(str(c.get('tier', '?')))
         rows += f"""
         <tr>
             <td style="padding:8px;border-bottom:1px solid #e2e8f0;">
-                <strong>{c.get('name', '?')}</strong>
-                <span style="background:{tier_color};color:white;padding:1px 5px;border-radius:3px;font-size:11px;margin-left:4px;">T{c.get('tier', '?')}</span>
+                <strong>{name}</strong>
+                <span style="background:{tier_color};color:white;padding:1px 5px;border-radius:3px;font-size:11px;margin-left:4px;">T{tier}</span>
             </td>
-            <td style="padding:8px;border-bottom:1px solid #e2e8f0;">{c.get('role', '')}<br><span style="color:#64748b;font-size:12px;">{c.get('company', '')}</span></td>
+            <td style="padding:8px;border-bottom:1px solid #e2e8f0;">{role}<br><span style="color:#64748b;font-size:12px;">{company}</span></td>
             <td style="padding:8px;border-bottom:1px solid #e2e8f0;">{linkedin_link}</td>
         </tr>
         <tr>

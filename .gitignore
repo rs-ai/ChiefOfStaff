@@ -5,18 +5,18 @@
 # can see the structure. After you customize with your real data,
 # uncomment the relevant lines below to protect your personal information.
 
-# ------ YOUR PERSONAL DATA (uncomment after setup) ------
-# After deleting example records and adding your real data,
-# uncomment these to keep personal data out of git:
+# ------ YOUR PERSONAL DATA ------
+# These are ignored by default to protect personal data.
+# Example data lives in examples/ for reference.
 
-# data/contacts.json
-# data/decisions.json
-# data/meetings.json
-# data/intelligence.json
-# data/tasks.json
-# data/connections.json
-# data/standup-latest.md
-# data/briefing-latest.md
+data/contacts.json
+data/decisions.json
+data/meetings.json
+data/intelligence.json
+data/tasks.json
+data/connections.json
+data/standup-latest.md
+data/briefing-latest.md
 
 # Intelligence research files (created by background agents)
 data/intelligence/

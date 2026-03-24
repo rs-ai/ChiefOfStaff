@@ -30,7 +30,9 @@ def load_json(filename):
 
 
 def save_json(filename, data):
-    path = PROJECT_ROOT / filename
+    path = (PROJECT_ROOT / filename).resolve()
+    if not str(path).startswith(str(PROJECT_ROOT.resolve())):
+        raise ValueError(f"Output path escapes project root: {filename}")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 

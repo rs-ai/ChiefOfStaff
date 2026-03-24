@@ -35,7 +35,7 @@ Pick the style that matches you. Delete the others.
 
 - **Lead with the conclusion.** No preamble. Get to the point.
 - **Bullet points over paragraphs.** Concise, scannable.
-- **Challenge me.** No sycophancy. Push back when something doesn't make sense.
+- **Challenge me.** No flattery. Push back when something doesn't make sense.
 - **Be direct but not cold.** Feedback must come from a good place.
 
 ## Suggested Domains (customize to your life)

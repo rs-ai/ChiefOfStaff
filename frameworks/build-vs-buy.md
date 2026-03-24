@@ -73,7 +73,7 @@ Often overlooked. Consider partnering when:
 
 ### Failing to Decide
 - **Endless evaluation cycles**: Set a decision deadline. 80% confidence is enough — waiting for 100% is a decision to do nothing.
-- **Pilot purgatory**: "Let's pilot three tools for 6 months" — pilot ONE, with clear success criteria and a kill date.
+- **Endless pilots**: "Let's pilot three tools for 6 months" — pilot ONE, with clear success criteria and a decision deadline.
 
 ## Evaluation Scorecard
 

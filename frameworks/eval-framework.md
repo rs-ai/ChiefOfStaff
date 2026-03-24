@@ -92,4 +92,4 @@
 - **Cloud AI platforms** — most major cloud providers offer built-in evaluator catalogs with pre-built eval templates (e.g., Azure AI Foundry, AWS Bedrock, Google Vertex AI)
 - **Open source** — RAGAS (RAG evals), DeepEval, Promptfoo (prompt testing)
 - **LLM-as-judge** — use one AI to evaluate another's outputs at scale
-- **External consultants** — firms like McKinsey QuantumBlack, Deloitte AI, Accenture, and BCG specialize in enterprise AI eval design
+- **External consultants** — major management consulting firms often have specialized AI evaluation practices

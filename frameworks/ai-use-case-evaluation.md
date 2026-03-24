@@ -39,7 +39,7 @@ Rate each dimension **High / Medium / Low** for every proposed use case.
 | High | Low | Any | Any | **R&D spike — time-box 4 weeks** |
 | Med | High | High | High | **Proceed if capacity allows** |
 | Med | Med | Med | Med | **Pilot only if strategic** |
-| Low | Any | Any | Any | **Kill — don't waste cycles** |
+| Low | Any | Any | Any | **Drop — don't waste cycles** |
 
 ## Pre-Evaluation Checklist
 
@@ -54,13 +54,13 @@ Before scoring, answer these:
 ## Common Pitfalls
 
 - **Solution looking for a problem**: Start with the business pain, not the technology
-- **Overweighting technical feasibility**: A technically brilliant model nobody uses is worthless
+- **Overweighting technical feasibility**: A technically brilliant model nobody uses delivers no business value
 - **Ignoring end-user adoption**: Deployment, UX, and workflow integration are where most projects die
 - **Confusing a demo with a product**: A Jupyter notebook is not production-ready
 - **No baseline measurement**: If you can't measure current performance, you can't prove AI improved it
 - **Scope creep via "while we're at it"**: Each use case gets its own evaluation — no bundling
 
-## Quick Kill Signals
+## Stop Signals
 
 Stop immediately if any of these are true:
 - No identifiable end user who will change their behavior

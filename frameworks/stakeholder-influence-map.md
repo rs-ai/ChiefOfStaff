@@ -76,10 +76,10 @@ Before every executive meeting, answer these 5 questions:
 5. **What's the next action I want them to take?**
    Approve, fund, sponsor, unblock, connect — be specific.
 
-## Influence Tactics by Situation
+## Communication Strategies by Situation
 
-| Situation | Tactic |
-|-----------|--------|
+| Situation | Strategy |
+|-----------|----------|
 | Need budget approval | Lead with ROI and risk of inaction, not features |
 | Facing resistance to change | Find one credible internal champion, pilot with their team first |
 | Competing with another initiative | Don't attack — show complementarity or clear differentiation |
