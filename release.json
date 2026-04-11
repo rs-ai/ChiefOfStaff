@@ -1,0 +1,54 @@
+{
+  "target_repo": "rs-ai/ChiefOfStaff",
+  "source_project": "C:/Users/shape/claude/ChiefofStaff",
+  "description": "AI-powered Chief of Staff operating system",
+  "version": "1.0.0",
+  "blocklist": [
+    "data/contacts.json",
+    "data/decisions.json",
+    "data/meetings.json",
+    "data/jobs.json",
+    "data/release-history.json",
+    "data/standup-latest.md",
+    "data/briefing-latest.md",
+    "data/alerts.json",
+    "data/background-log.json",
+    "data/linkedin-article-ideas.json",
+    "domains/04-stakeholder-mgmt.md",
+    "domains/05-regulatory.md",
+    "domains/07-career.md",
+    "domains/09-family.md",
+    "domains/10-side-business.md",
+    "context-documents.md",
+    "mistakes.md",
+    "scripts/.env",
+    "frameworks/deployment-protocol.md",
+    "frameworks/field-deployment-playbook.md"
+  ],
+  "transforms": {
+    "domains/01-ai-adoption.md": "domains/01-current-role.md",
+    "domains/02-data-strategy.md": "domains/02-career-growth.md",
+    "domains/03-team-leadership.md": "domains/03-leadership.md",
+    "domains/08-personal-growth.md": "domains/04-personal-projects.md",
+    "domains/11-spirituality.md": "domains/05-health.md",
+    "domains/06-industry-intel.md": "domains/06-learning.md"
+  },
+  "copy_as_is": [
+    "frameworks/*.md",
+    "scripts/notify.py",
+    "scripts/graph-query.py",
+    ".claude/commands/*.md"
+  ],
+  "public_only": [
+    "README.md",
+    "LICENSE",
+    "AGENTS.md",
+    "GEMINI.md",
+    "examples/*.md",
+    "data/*.json"
+  ],
+  "commit_identity": {
+    "name": "rs-ai",
+    "email": "rs-ai@users.noreply.github.com"
+  }
+}
