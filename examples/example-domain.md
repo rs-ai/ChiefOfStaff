@@ -1,6 +1,8 @@
 # Current Role — Example
 
 > This is an example of a completed domain file. Your domain files should have this level of detail. Delete this file or use it as a reference.
+>
+> *All names, roles, companies, and scenarios in this example are entirely fictitious.*
 
 ## Current State
 - Started as Director of Operations at GrowthCo 18 months ago

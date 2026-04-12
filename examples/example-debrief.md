@@ -1,6 +1,6 @@
 # Example Evening Debrief
 
-*This is what a typical `/debrief` output looks like.*
+*This is what a typical `/debrief` output looks like. All names, roles, and scenarios are entirely fictitious.*
 
 ---
 

@@ -27,6 +27,13 @@ data/intelligence/
 # domains/08-family.md
 # domains/10-finance.md
 
+# ------ PIPELINE FILES ------
+# These are local pipeline configuration — never push to public repo.
+release.json
+release-history.json
+sanitization-reports/
+comparison-reports/
+
 # ------ ALWAYS IGNORED ------
 
 # Environment files (API keys)

@@ -58,8 +58,11 @@ If you noticed any friction during this session or the day:
 ### Step 5: Close
 End with: **"Shall I commit and push these updates to git?"**
 
-If yes:
+If yes, first verify `.gitignore` is protecting sensitive files:
 ```bash
+# Verify sensitive files are gitignored before pushing
+git status --short
+# Confirm data/contacts.json, data/decisions.json, data/meetings.json are NOT staged
 git add CLAUDE.md domains/ data/ frameworks/
 git commit -m "chore: daily debrief — [date]"
 git push
