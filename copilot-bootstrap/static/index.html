@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chief of Staff — Bootstrap for Microsoft 365</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 860px; margin: 0 auto; padding: 2rem; background: #fafafa; color: #1a1a1a; line-height: 1.6; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+  h2 { font-size: 1.3rem; margin-top: 2.5rem; border-bottom: 2px solid #0066cc; padding-bottom: 0.3rem; color: #0066cc; }
+  h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .subtitle { color: #666; margin-bottom: 1.5rem; }
+  pre { background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 6px; padding: 1rem; overflow-x: auto; font-size: 0.85rem; white-space: pre-wrap; }
+  code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9rem; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }
+  th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }
+  th { background: #f5f5f5; }
+  .how-to { background: #e3f2fd; border: 1px solid #90caf9; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .how-to strong { color: #1565c0; }
+  .copy-prompt { background: #fff3e0; border: 1px solid #ffcc80; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .copy-prompt pre { background: #fff8e1; border-color: #ffe082; }
+  .capability { background: #f5f5f5; border-left: 3px solid #0066cc; padding: 0.75rem 1rem; margin: 0.75rem 0; border-radius: 0 6px 6px 0; }
+  .capability strong { color: #0066cc; }
+  .path-card { background: white; border: 2px solid #0066cc; border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0; }
+  .path-card h3 { margin-top: 0; color: #0066cc; }
+  .path-card.alt { border-color: #666; }
+  .path-card.alt h3 { color: #333; }
+  .habit-stack { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .habit-stack strong { color: #2e7d32; }
+  .schedule-note { background: #f3e5f5; border: 1px solid #ce93d8; border-radius: 8px; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+  .schedule-note strong { color: #7b1fa2; }
+  hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
+  footer { margin-top: 3rem; color: #999; font-size: 0.85rem; text-align: center; }
+  #copy-btn { position: fixed; bottom: 1.5rem; right: 1.5rem; background: #0066cc; color: white; border: none; padding: 0.75rem 1.25rem; border-radius: 8px; cursor: pointer; font-size: 0.95rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); z-index: 100; }
+  #copy-btn:hover { background: #0052a3; }
+</style>
+</head>
+<body>
+
+<h1>AI Chief of Staff</h1>
+<p class="subtitle">Your personal AI advisor on Microsoft 365. No coding. No admin access. One prompt.</p>
+
+<div class="how-to">
+<strong>How to get started:</strong><br>
+Copy the setup prompt below and paste it into M365 Copilot at <code>microsoft365.com/copilot</code> or in Teams.<br><br>
+That's it. <strong>Your first useful insight arrives in under 5 minutes</strong> — before you commit to the full setup.<br><br>
+<strong>Want to build a dedicated agent?</strong> See the <a href="#agent-instructions">Agent Instructions</a> section below.
+</div>
+
+<h2>What It Does</h2>
+<p>Five interactive modes, each designed for a specific part of your day:</p>
+
+<div class="capability">
+<strong>Morning Briefing</strong> — Your three priorities for today, calendar conflicts, and one thing slipping that you haven't asked about.
+</div>
+
+<div class="capability">
+<strong>Meeting Prep</strong> — Before any meeting: who you're meeting, what they care about, your goal, talking points, and what to listen for.
+</div>
+
+<div class="capability">
+<strong>Capture Session</strong> — After a meeting or conversation: log decisions, tasks, and intelligence. Everything gets connected to your priorities.
+</div>
+
+<div class="capability">
+<strong>Strategic Brainstorm</strong> — Think through a decision with an advisor who knows your strategy, people, and landscape. Trade-offs, not platitudes.
+</div>
+
+<div class="capability">
+<strong>Maintenance</strong> — Weekly review: what progressed, what's stale, which relationships need attention, and where your priorities doc needs updating.
+</div>
+
+<h2>The Habit Stack</h2>
+
+<div class="habit-stack">
+<strong>Email hook:</strong> An automated morning briefing lands in your inbox before you start your day.<br><br>
+<strong>Daily session:</strong> You open Copilot, say "good morning," and get three actions tailored to your actual priorities and calendar.<br><br>
+<strong>Compounding system:</strong> Every meeting prep, captured decision, and logged signal makes the next briefing smarter. The more you use it, the more it knows.
+</div>
+
+<h2>Two Paths</h2>
+
+<div class="path-card">
+<h3>Path 1: Get Started Now</h3>
+<p>Copy the setup prompt and paste it into M365 Copilot. It will interview you to build your strategic context, then start working as your Chief of Staff immediately.</p>
+<p>Click the <strong>Copy full prompt</strong> button at the bottom-right of this page.</p>
+<p><strong>Time:</strong> 30 minutes for the initial interview. Then it's ready.</p>
+</div>
+
+<div class="path-card alt" id="agent-instructions">
+<h3>Path 2: Create Your Own Agent</h3>
+<p>If your M365 Copilot supports agent creation (look for "Agents" in the sidebar), you can build a dedicated Chief of Staff agent with a persistent persona.</p>
+<ol>
+<li>Open M365 Copilot and look for <strong>Agents</strong> or <strong>Create</strong></li>
+<li>See <strong>AGENT-INSTRUCTIONS.md</strong> in the repo for the complete agent persona and build steps</li>
+<li>Add your OneDrive knowledge docs as knowledge sources</li>
+<li>Start using it daily</li>
+</ol>
+<p><strong>Time:</strong> 1-2 hours including the onboarding interview.</p>
+</div>
+
+<h2>Scheduled Prompts</h2>
+
+<div class="schedule-note">
+<strong>Automated briefings:</strong> Set up scheduled prompts so your Chief of Staff delivers a morning briefing to your email every weekday — without you opening Copilot.<br><br>
+See <strong>SCHEDULED-PROMPTS.md</strong> for ready-to-use templates you can schedule directly in M365 Copilot.
+</div>
+
+<hr>
+
+<h2>Done</h2>
+<p>After setup, you'll have:</p>
+<ul>
+<li>A personal AI advisor grounded in your actual strategy, people, and landscape</li>
+<li>Automated morning briefings delivered to your email</li>
+<li>5 interactive modes: briefing, meeting prep, capture, strategic brainstorm, maintenance</li>
+<li>A system that gets smarter over time as you use it</li>
+<li>All on Microsoft 365 tools your company already provides</li>
+</ul>
+<p><strong>To maintain:</strong> update your strategic context when priorities change (1-2x per year). The rest compounds on its own.</p>
+
+<footer>
+An open-source framework for building your AI Chief of Staff on Microsoft 365.
+</footer>
+
+<button id="copy-btn" onclick="copyAll()">Copy full prompt</button>
+
+<script>
+async function copyAll() {
+  const resp = await fetch('SETUP.md');
+  const text = await resp.text();
+  await navigator.clipboard.writeText(text);
+  const btn = document.getElementById('copy-btn');
+  btn.textContent = 'Copied!';
+  setTimeout(() => btn.textContent = 'Copy full prompt', 2000);
+}
+</script>
+</body>
+</html>
