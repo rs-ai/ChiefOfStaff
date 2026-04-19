@@ -186,7 +186,7 @@ The Chief of Staff runs **once per day**, triggered by the daily check-in.
 4. Intelligence scan (relevant news, market signals)
 5. Connection graph update (new relationships discovered)
 6. Write results to `data/standup-latest.md` (created automatically by the daily check-in)
-7. Optionally email results via `python scripts/notify.py --all`
+7. Optionally email results via `uv run scripts/notify.py --all`
 
 ### Interactive Session
 1. Read `mistakes.md`, `data/standup-latest.md` (if it exists), all data files

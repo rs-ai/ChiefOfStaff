@@ -1,5 +1,13 @@
 # Chief of Staff — Python Dependencies
-# Install with: pip install -r requirements.txt
+#
+# Primary path: scripts in scripts/ declare their deps inline (PEP 723).
+# Just run them with uv — no install step needed:
+#   uv run scripts/notify.py --test
+#   uv run scripts/graph-query.py
+#
+# This file is a fallback for non-uv workflows. Install with either:
+#   pip install -r requirements.txt
+#   uv pip install -r requirements.txt   (run `uv venv` first for an isolated env)
 
 duckdb>=0.9.0      # Knowledge graph queries (scripts/graph-query.py)
 resend>=0.7.0      # Email notifications (scripts/notify.py)

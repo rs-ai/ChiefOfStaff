@@ -52,8 +52,15 @@ The `CLAUDE.md` file is the primary instruction set. For non-Claude tools, adapt
 git clone https://github.com/YOUR_USERNAME/ChiefOfStaff.git
 cd ChiefOfStaff
 
-# 2. Install dependencies (optional — only needed for email notifications and graph queries)
-pip install -r requirements.txt
+# 2. (Optional) Install uv so helper scripts can auto-manage their own deps.
+#    https://docs.astral.sh/uv/getting-started/installation/
+#    Scripts in scripts/ declare their deps inline (PEP 723). Run with `uv run`
+#    and deps resolve automatically — no venv, no pre-install:
+#      uv run scripts/notify.py --test
+#      uv run scripts/graph-query.py
+#
+#    Prefer plain pip? A fallback requirements.txt is kept for that:
+#      pip install -r requirements.txt
 
 # 3. Edit CLAUDE.md — fill in the {{placeholders}} with your details
 #    This takes 10-15 minutes. It's the only setup you need.
