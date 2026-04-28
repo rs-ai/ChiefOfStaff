@@ -2,11 +2,30 @@
 
 This guide helps AI assistants apply updates when a user upgrades from an older version.
 
-## Current Version: 1.0.0
+## Current Version: 1.1.0
 
-This is the initial release. No upgrade steps needed.
+## Upgrading from 1.0.0 to 1.1.0
+
+This release adds the drift prevention framework. It is purely additive — no existing files change semantics.
+
+### What to copy in
+
+1. Add the `drift-prevention/` directory (framework + 6 agent specs).
+2. Add `architecture-spec.md` to the project root. This is a template — the user fills it in with their canonical layout, data files, and (optional) knowledge graph schema.
+3. Add `.claude/commands/drift-check.md`.
+
+### What to merge into existing files
+
+- `CLAUDE.md`: add the **Drift Prevention** section with the 6-agent table, links to `drift-prevention/framework.md` and `architecture-spec.md`. Add `/drift-check` to the slash commands table. If the user has customized `CLAUDE.md`, merge — do not overwrite.
+
+### After the upgrade
+
+- Update the version marker in the user's `CLAUDE.md`: `<!-- DO NOT DELETE: rs-ai/chief-of-staff@1.1.0 (2026-04-28) -->`
+- Suggest the user run `/drift-check quick` to confirm everything is wired up.
 
 ## How Upgrades Work
+
+### How Upgrades Work
 
 When a user asks you to check for updates:
 

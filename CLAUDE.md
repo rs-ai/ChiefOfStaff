@@ -235,6 +235,25 @@ Add agents for any persistent research need.
 | `/add-intel` | Capture intelligence, news, insights | Anytime |
 | `/domain-review` | Deep dive into one domain | Ad-hoc |
 | `/dashboard` | Status across all domains | Weekly |
+| `/drift-check` | Run drift prevention agents | On-demand |
+
+## Drift Prevention
+
+AI-assisted projects accumulate drift — silent degradation of security, code quality, data integrity, and structure. The drift prevention framework uses 6 specialized agents to detect and fix drift before it compounds.
+
+**Full framework:** See [`drift-prevention/framework.md`](drift-prevention/framework.md)
+**Architecture spec:** See [`architecture-spec.md`](architecture-spec.md)
+
+| # | Agent | Drift Type | What It Prevents |
+|---|-------|-----------|-----------------|
+| 1 | **Defender** | Security drift | Vulnerabilities, leaked secrets, dependency CVEs, OWASP violations |
+| 2 | **Healer** | Code drift | Bugs, broken imports, stale config, dead code, type errors |
+| 3 | **Simplifier** | Complexity drift | Over-engineering, unnecessary abstractions, deep nesting, bloat |
+| 4 | **Psychologist** | Behavioral drift | AI passivity, lazy shortcuts, low-quality output, blocked-without-trying |
+| 5 | **Consistency** | Data drift | Contradictions across files, schema violations, stale data, data loss |
+| 6 | **Architect** | Structural drift | File system sprawl, naming chaos, knowledge graph decay, orphaned structures |
+
+Run `/drift-check all` for a full maintenance pass, or `/drift-check quick` for cheap daily checks.
 
 ## Data Sensitivity
 
