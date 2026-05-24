@@ -1,14 +1,21 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["duckdb>=0.9.0"]
+# ///
 """
 Chief of Staff -- Knowledge Graph Engine
 ========================================
 Builds a property graph over all JSON data files using DuckDB + DuckPGQ.
 Discovers connections, surfaces insights, and outputs findings for standup briefings.
 
+Dependencies are declared inline (PEP 723) and resolved automatically by `uv run`.
+No pre-install step needed — just run the script.
+
 Usage:
-    python scripts/graph-query.py                    # Full analysis
-    python scripts/graph-query.py --standup           # Standup-formatted output
-    python scripts/graph-query.py --summary           # One-line summary
+    uv run scripts/graph-query.py                    # Full analysis
+    uv run scripts/graph-query.py --standup           # Standup-formatted output
+    uv run scripts/graph-query.py --summary           # One-line summary
 """
 
 import json

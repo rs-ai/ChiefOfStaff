@@ -1,9 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.10"
+# dependencies = ["resend>=0.7.0"]
+# ///
 """
 Chief of Staff — Email Notification System
 
 Sends email alerts for intelligence, contacts, and briefings.
 Uses Resend API — no email passwords, just a revocable API key.
+
+Dependencies are declared inline (PEP 723) and resolved automatically by `uv run`.
+No pre-install step needed — just run the script.
 
 Setup:
   1. Sign up at https://resend.com (free tier: 100 emails/day)
@@ -11,7 +18,7 @@ Setup:
   3. Create scripts/.env with:
        RESEND_API_KEY=re_xxxxxxxxx
        NOTIFY_TO=your.real.email@gmail.com
-  4. Test: python scripts/notify.py --test
+  4. Test: uv run scripts/notify.py --test
 
 Optional: Verify a custom domain in Resend for a branded sender
   (e.g. chief@yourdomain.com). Without it, sends from onboarding@resend.dev.
@@ -269,7 +276,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2 or sys.argv[1] not in commands or sys.argv[1] == "--help":
         print("Chief of Staff — Email Notification System")
         print()
-        print("Usage: python scripts/notify.py [command]")
+        print("Usage: uv run scripts/notify.py [command]")
         print()
         print("Commands:")
         for cmd, fn in commands.items():
@@ -278,10 +285,10 @@ if __name__ == "__main__":
         print(f"  {'--help':15s} Show this help message")
         print()
         print("Setup:")
-        print("  1. pip install -r requirements.txt")
+        print("  1. Install uv: https://docs.astral.sh/uv/getting-started/installation/")
         print("  2. Copy scripts/.env.example to scripts/.env")
         print("  3. Add your RESEND_API_KEY and NOTIFY_TO email")
-        print("  4. Run: python scripts/notify.py --test")
+        print("  4. Run: uv run scripts/notify.py --test")
         sys.exit(0 if sys.argv[1:] == ["--help"] else 1)
 
     config = load_env()
